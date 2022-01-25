@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Super Exploreur</title>
+  <meta charset="utf-8">
+  <meta name="author" content="tatibouet khris">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+     integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+     crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+     integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+     crossorigin=""></script>
+  <link rel="stylesheet" href="../css/jeu.css">
+  <style>
+    li img{
+        height:50px;
+    }
+  </style>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../html/accueil.php">Home</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav"></ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a><span onclick="chat()" class="glyphicon glyphicon-eye-open" type="button" name="test" value="CHAT"></span></a></li>
+          <li><a><span class="glyphicon glyphicon-info-sign" data-toggle="collapse" data-target="#regles"></span></a></li>
+          <li><a href="../html/profil.php"><span class="glyphicon glyphicon-user">Profil</a></li>
+          <li><a href="../php/deconnexion.php"><span class="glyphicon glyphicon-log-out">Deconnexion</a></li>
+        </ul>
+      </div>
+    </div>
+	</nav>
+
+  <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+    <div id="regles" class="collapse">
+      Bonjour, pour jouer il vous suffit de choisir une difficulté qui régle le nombre de cliques possible et le rayon à partir duquel vous trouverez les differents endroit caché sur la carte. Quand vous trouverez l'un d'eux, vous pourrez avoir accès à plus d'informations en cliquant sur le bouton bleu. Enjoy !
+    </div>
+  </div>
+  <br>
+
+
+	<div class="container">
+		<div class="text-center page-header">
+      <h1>Super Exploreur un jeu  ludique!</h1>
+      <h4>À toi de jouer ! ;)</h4>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+			<div id="nbClick"><kbd>Nombre de click: 0</kbd></div><br>
+			<div id="score"><kbd> Score: 0</kbd></div><br>
+			<div>
+				<ul id="liste_pays"></ul>
+			</div>
+		</div>
+
+		<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+  		<div style="width: 100%; height: 400px" id="map"></div>
+      <br>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <boutton id="n1" class="btn btn-info level" type="button" data-val="n1">Facile</boutton>
+        <boutton id="n2" class="btn btn-warning level" type="button" data-val="n2">Normal</boutton>
+        <boutton id="n3" class="btn btn-danger level" type="button" data-val="n3">Difficile</boutton>
+      </div>
+    </div>
+
+		<div class="container" id="tabScore">
+  		<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-3 col-sm-12 col-xs-12">
+  		  <h2 class ="page-header">Tableau des scores</h2>
+  		  <table class="table table-hover">
+  		    <thead>
+  		      <tr class="success">
+  		        <th>Pseudo</th>
+  		        <th>Score</th>
+  		      </tr>
+  		    </thead>
+  		    <tbody>
+  				 <tr class="success">
+  					<td>En cours...</td>
+  					<td>En cours...</td>
+  				 </tr>
+  				</tbody>
+  		  </table>
+  		</div>
+		</div>
+	</div>
+
+	<div class="container">
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Information supplémentaire</h4>
+          </div>
+          <div class="modal-body">
+            <p id="info"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../javaScript/jeu.js"></script>
+</body>
+</html>

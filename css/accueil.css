@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montseerat&display=swap');
+
+h1, h2, h4{
+  color: white;
+  font-family: 'Monserrat';
+}
+
+#f1, #f2, #f3, #f4{
+  font-family: monserrat;
+ background-image: radial-gradient(rgb(0,0,0,0.5),rgb(0,0,100,0.5));
+  border-radius: 70px;
+  padding: 4%;
+}
+
+
+p, input{
+  font-family: 'Montserrat';
+}
+
+
+body {
+    background-size: 100%;
+    background-image: url("../IMAGE/carteV.jpg");
+    background-attachment:fixed;
+    background-repeat: repeat;
+    text-align: center;
+}
+
+
+.btn {
+  background-color: inherit;
+  font-family: 'Montserrat';
+  color: white;
+}
+
+
+.active, .btn:hover {
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  border-bottom-color: #660066;
+}
+
+
+

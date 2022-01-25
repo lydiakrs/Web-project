@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montseerat&display=swap');
+
+
+body {
+    background-size: 100%;
+    background-image: url("../IMAGE/carteV.jpg");
+    background-attachment:fixed;
+    background-repeat: repeat;
+    text-align: center;
+}
+
+h1, h2{
+  color: #660066;
+  font-family: 'Montserrat';
+}
+
+#regles{
+  color: white;
+  border-radius: 40px;
+  background-image: radial-gradient(rgb(198, 212, 234, 0.5),rgb(198, 232, 234, 0.5));
+}
+
+#maMap{
+  border-style: dotted;
+  border-radius: 20px;
+  border-color: #660066;
+}
+
+
